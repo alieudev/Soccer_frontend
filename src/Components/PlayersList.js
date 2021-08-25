@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Player from './Player'
-import { useHistory, Route, Switch } from 'react-router-dom'
-import EditPlayer from './EditPlayer'
+import { useHistory, Switch } from 'react-router-dom'
 
-function PlayersList() {
+
+function PlayersList({ playerList, setPlayerList }) {
     const history = useHistory();
     const [name, setName] = useState('')
     const [height, setHeight] = useState('')
     const [weight, setWeight] = useState('')
     const [foot, setFoot] = useState('')
     const [rating, setRating] = useState('')
-    const [playerList, setPlayerList] = useState([])
+    
 
     
     const handleSubmit = async (e) => {
@@ -33,12 +33,6 @@ function PlayersList() {
           setPlayerList([parsedBody, ...playerList]);
           history.push('/manage_team');
     }
-
-    useEffect(() => {
-        fetch(`http://localhost:9292/players`)
-        .then(r => r.json())
-        .then(setPlayerList)
-    }, [])
 
     const playerListInfo = playerList.map((eachPlayer) => {
         return (<Player 
@@ -75,12 +69,7 @@ function PlayersList() {
                 </label>
                 <input type='submit' value ="Submit"/>
             </form>
-            <Switch>
-         
                     {playerListInfo}
-
-              
-            </Switch> 
         </div>
     )
 }

@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
 function EditPlayer({ setPlayerList, players, player = {} }) {
     const history = useHistory()
-    const [name, setName] = useState('')
-    const [height, setHeight] = useState('')
-    const [weight, setWeight] = useState('')
-    const [foot, setFoot] = useState('')
-    const [rating, setRating] = useState('')
+    const [name, setName] = useState(player.name)
+    const [height, setHeight] = useState(player.height)
+    const [weight, setWeight] = useState(player.weight)
+    const [foot, setFoot] = useState(player.foot)
+    const [rating, setRating] = useState(player.rating)
+
+    console.log(players)
 
     const {id} = useParams();
 
@@ -31,6 +33,14 @@ function EditPlayer({ setPlayerList, players, player = {} }) {
           setPlayerList(players.map(player => player.id === parseInt(id) ? parsedBody : player));
           history.push('/manage_team');
     }
+
+    useEffect(() => {
+        setName(player.name);
+        setHeight(player.height);
+        setWeight(player.weight);
+        setFoot(player.foot)
+        setRating(player.rating)
+      }, [player])
 
     return (
         <form onSubmit={handleSubmit}>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Player({ id, name, height, weight, foot, rating, setPlayers, playerList, image }) {
 
     const handleDelete = async () => {
@@ -21,6 +23,7 @@ function Player({ id, name, height, weight, foot, rating, setPlayers, playerList
                 <img src={image} alt={name}></img>
                 
                 <button onClick={handleDelete}>Delete</button>
+                <Link to={`/manage_team/${id}/edit`}>Edit Player</Link>
             </div>
     )
 }
