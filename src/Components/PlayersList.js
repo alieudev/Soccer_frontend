@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Player from './Player'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Route, Switch } from 'react-router-dom'
+import EditPlayer from './EditPlayer'
 
 function PlayersList() {
     const history = useHistory();
@@ -74,9 +75,12 @@ function PlayersList() {
                 </label>
                 <input type='submit' value ="Submit"/>
             </form>
+            <Switch>
+         
+                    {playerListInfo}
 
-            {playerListInfo}
-
+              
+            </Switch> 
         </div>
     )
 }
