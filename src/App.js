@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home'
+import NavBar from './Components/NavBar'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
+import PlayersList from './Components/PlayersList';
 
 function App() {
+
+  fetch("http://localhost:9292")
+    .then((r) => r.json())
+    .then((data) => console.log(data))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+          <header>
+            <NavBar />
+          </header>
+          <Switch>
+            <Route exact path='/'>
+              <Home/>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path='/manage_team'>
+              <PlayersList />
+            </Route>
+          </Switch>
+      </Router>
     </div>
   );
-}
+  }
 
 export default App;
