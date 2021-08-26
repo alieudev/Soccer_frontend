@@ -71,7 +71,6 @@ body {
 .player-display{
   background-color: rgba(170, 180, 194, 0.253);
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -83,7 +82,7 @@ body {
   padding-bottom: 5px;
   margin-left: 20px;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 0;
   border: 2px solid black;
 }
 
@@ -117,7 +116,7 @@ body {
 
 .nav-bar  {
   text-align: center;
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 20px 5px;
   font-size: 25px
 }
 
@@ -135,3 +134,17 @@ nav a.nav-link:hover{
 .nav-link a:hover{
   color: white
 } 
+
+.add_player_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100px; */
+  height: 60px;
+  border-radius: 5px;
+  /* margin-left: 20%; */
+}
+
+.soccer_dude {
+  color: rgb(0, 83, 160)
+}

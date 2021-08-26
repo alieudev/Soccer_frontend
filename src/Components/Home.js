@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 
 function Home() {
     const [name, setName] = useState('')
