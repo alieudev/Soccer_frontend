@@ -3,6 +3,7 @@ import Player from './Player'
 import { useHistory, Switch } from 'react-router-dom'
 
 
+
 function PlayersList({ playerList, setPlayerList }) {
     const history = useHistory();
     const [name, setName] = useState('')
@@ -10,6 +11,7 @@ function PlayersList({ playerList, setPlayerList }) {
     const [weight, setWeight] = useState('')
     const [foot, setFoot] = useState('')
     const [rating, setRating] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
     
 
     
@@ -26,7 +28,8 @@ function PlayersList({ playerList, setPlayerList }) {
                 height,
                 weight,
                 foot,
-                rating
+                rating,
+                imageUrl
           })
         });
           const parsedBody = await res.json();
@@ -66,6 +69,9 @@ function PlayersList({ playerList, setPlayerList }) {
                 </label>
                 <label> Rating:
                     <input type='text' onChange={(e) => setRating(e.target.value)}/>
+                </label>
+                <label> Image URL:
+                    <input type='text' onChange={(e) => setImageUrl(e.target.value)}/>
                 </label>
                 <input type='submit' value ="Submit"/>
             </form>

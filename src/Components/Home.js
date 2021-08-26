@@ -9,14 +9,9 @@ function Home() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Player Name:
-                    <input type="text" name="name" onChange={(e)=>setName(e.target.value)}/>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+        <div style={{linearGradient:'(rgb(0, 83, 160), rgb(253,190,17))'}}>
+            <h1 style={{textAlign: "center"}}>Welcome to the Leicester City Manager App!</h1>
+            <img className="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Leicester_City_crest.svg/1200px-Leicester_City_crest.svg.png" />
         </div>
     )
 } 
