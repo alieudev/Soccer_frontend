@@ -34,7 +34,7 @@ const [playerList, setPlayerList] = useState([])
               <PlayersList playerList={playerList} setPlayerList={setPlayerList} />
             </Route>
             <Route exact path='/manage_team/add_player'>
-              <AddPlayer />
+              <AddPlayer playerList={playerList} setPlayerList={setPlayerList}/>
             </Route>
             <Route
               exact

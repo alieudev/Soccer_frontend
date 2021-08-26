@@ -148,3 +148,31 @@ nav a.nav-link:hover{
 .soccer_dude {
   color: rgb(0, 83, 160)
 }
+
+.player-forms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+form {
+  width: 200px;
+}
+
+
+label {
+  display: block;
+  position: relative;
+
+}
+ 
+
+input[type=text] {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}

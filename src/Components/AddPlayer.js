@@ -11,50 +11,70 @@ function AddPlayer({playerList, setPlayerList}) {
     const [rating, setRating] = useState('')
     const [imageUrl, setImageUrl] = useState('')
 
+    console.log(playerList)
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch(`http://localhost:9292/players`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                Accept: 'application/json' 
-            },
-            body: JSON.stringify({
-                name,
-                height,
-                weight,
-                foot,
-                rating,
-                imageUrl
-          })
-        });
-          const parsedBody = await res.json();
-          setPlayerList([parsedBody, ...playerList]);
-          history.push('/manage_team');
+        if (name && height && weight && foot && rating && imageUrl) {
+            const res = await fetch(`http://localhost:9292/players`, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json' 
+                },
+                body: JSON.stringify({
+                    name,
+                    height,
+                    weight,
+                    foot,
+                    rating,
+                    imageUrl
+            })
+            });
+            const parsedBody = await res.json();
+            setPlayerList([parsedBody, ...playerList]);
+            history.push('/manage_team');
+        } else {
+            window.alert("You Must Fill Out All Fields!")
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit}> 
-            <label> Name:
+        <div className="player-forms">
+            <h2>Add a Player</h2>
+            <form onSubmit={handleSubmit} className='form-submit'> 
+                <label> 
+                    Name: 
+                </label> 
                 <input type='text' onChange={(e) => setName(e.target.value)}/>
-            </label> 
-            <label> Height:
+                <br></br>
+                <label> 
+                    Height:
+                </label>
                 <input type='text' onChange={(e) => setHeight(e.target.value)}/>
-            </label>
-            <label> Weight:
+                <br></br>
+                <label> 
+                    Weight: 
+                </label>
                 <input type='text' onChange={(e) => setWeight(e.target.value)}/>
-            </label>
-            <label> Foot:
+                <br></br>
+                <label> 
+                    Foot: 
+                </label>
                 <input type='text' onChange={(e) => setFoot(e.target.value)}/>
-            </label>
-            <label> Rating:
-                <input type='text' onChange={(e) => setRating(e.target.value)}/>
-            </label>
-            <label> Image URL:
+                <br></br>
+                <label> 
+                    Rating: 
+                </label>
+                    <input type='text' onChange={(e) => setRating(e.target.value)}/>
+                <br></br>
+                <label> 
+                    Image URL: 
+                </label>
                 <input type='text' onChange={(e) => setImageUrl(e.target.value)}/>
-            </label>
-            <input type='submit' value ="Submit"/>
-        </form>
+                <br></br>
+                <input type='submit' value ="Submit"/>
+            </form>
+        </div>
     )
 }
 

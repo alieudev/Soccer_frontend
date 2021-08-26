@@ -43,24 +43,33 @@ function EditPlayer({ setPlayerList, players, player = {} }) {
       }, [player])
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label> Name:
+        <div className="player-forms">
+            <h2>Edit a Player</h2>
+            <form onSubmit={handleSubmit}>
+                <label> 
+                    Name:
+                </label>
                 <input value={name} type='text' onChange={(e) => setName(e.target.value)} />
-            </label>
-            <label> Height:
+                <label> 
+                    Height:
+                </label>
                 <input value={height} type='text' onChange={(e) => setHeight(e.target.value)} />
-            </label>
-            <label> Weight:
+                <label> 
+                    Weight: 
+                </label>
                 <input value={weight} type='text' onChange={(e) => setWeight(e.target.value)} />
-            </label>
-            <label> Foot:
+                <label> 
+                    Foot:
+                </label>
                 <input value={foot} type='text' onChange={(e) => setFoot(e.target.value)} />
-            </label>
-            <label> Rating:
+                <label> 
+                    Rating:
+                </label>
                 <input value={rating} type='text' onChange={(e) => setRating(e.target.value)} />
-            </label>
-            <input type='submit' value="Submit" />
-        </form>
+                <br></br>
+                <input type='submit' value="Submit" />
+            </form>
+        </div>
     )
 }
 
