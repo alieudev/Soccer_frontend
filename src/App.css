@@ -1,15 +1,9 @@
-* {
- 
-  /* background-color: rgba(155, 201, 153, 0.568); */
-}
+
 
 body {
   background-image:
-    /* linear-gradient(rgb(0, 83, 160), rgb(253,190,17)); */
       linear-gradient(45deg, rgb(0, 83, 160) 25%, transparent 25%, transparent 75%, rgb(0, 83, 160) 75%),
       linear-gradient(45deg, rgb(0, 83, 160) 25%, rgb(253,190,17) 25%, rgb(253,190,17) 75%, rgb(0, 83, 160) 75%);
-      /* background-size: 800px ; */
-      /* background-position: 0 0, 0 10px, 10px -10px, -10px 0px; */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -139,10 +133,8 @@ nav a.nav-link:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100px; */
   height: 60px;
   border-radius: 5px;
-  /* margin-left: 20%; */
 }
 
 .soccer_dude {
@@ -175,4 +167,28 @@ input[type=text] {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
+}
+
+.premier-league {
+  text-align: center;
+}
+
+.league-logo {
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px
+
+}
+.each-team {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.premier-table {
+  margin-bottom: 30px;
 }

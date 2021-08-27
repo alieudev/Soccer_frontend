@@ -1,42 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Player from './Player'
-import { useHistory, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GiSoccerKick } from 'react-icons/gi';
 
 
 
 function PlayersList({ playerList, setPlayerList }) {
-    // const history = useHistory();
-    // const [name, setName] = useState('')
-    // const [height, setHeight] = useState('')
-    // const [weight, setWeight] = useState('')
-    // const [foot, setFoot] = useState('')
-    // const [rating, setRating] = useState('')
-    // const [imageUrl, setImageUrl] = useState('')
-    
 
-    
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     const res = await fetch(`http://localhost:9292/players`, {
-    //         method: 'POST',
-    //         headers: { 
-    //             'Content-Type': 'application/json',
-    //             Accept: 'application/json' 
-    //         },
-    //         body: JSON.stringify({
-    //             name,
-    //             height,
-    //             weight,
-    //             foot,
-    //             rating,
-    //             imageUrl
-    //       })
-    //     });
-    //       const parsedBody = await res.json();
-    //       setPlayerList([parsedBody, ...playerList]);
-    //       history.push('/manage_team');
-    // }
 
     const playerListInfo = playerList.map((eachPlayer) => {
         return (<Player 

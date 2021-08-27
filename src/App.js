@@ -11,12 +11,14 @@ function App() {
 
 const [playerList, setPlayerList] = useState([])
 
+
   
     useEffect(() => {
       fetch(`http://localhost:9292/players`)
       .then(r => r.json())
       .then(setPlayerList)
   }, [])
+
 
   return (
     <div>
@@ -26,7 +28,7 @@ const [playerList, setPlayerList] = useState([])
           </header>
           <Switch>
             <Route exact path='/'>
-              <Home/>
+            <Home />
             </Route>
           </Switch>
           <Switch>

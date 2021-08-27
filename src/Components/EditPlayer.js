@@ -9,7 +9,7 @@ function EditPlayer({ setPlayerList, players, player = {} }) {
     const [foot, setFoot] = useState(player.foot)
     const [rating, setRating] = useState(player.rating)
 
-    console.log(players)
+    // console.log(players)
 
     const {id} = useParams();
 

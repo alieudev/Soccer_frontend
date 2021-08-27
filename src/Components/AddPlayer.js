@@ -11,7 +11,7 @@ function AddPlayer({playerList, setPlayerList}) {
     const [rating, setRating] = useState('')
     const [imageUrl, setImageUrl] = useState('')
 
-    console.log(playerList)
+    // console.log(playerList)
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (name && height && weight && foot && rating && imageUrl) {
